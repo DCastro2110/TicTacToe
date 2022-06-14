@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  box-sizing: border-box;\n  margin: 0;\n  font-family: \"Helvetica\";\n}\n\nbody {\n  background-color: #444;\n}\n\n.container {\n  margin: auto;\n  display: flex;\n  flex-direction: column;\n}\n.container .box {\n  background-color: rgb(18, 89, 212);\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  height: 500px;\n  width: 500px;\n  margin: auto;\n}\n.container .box div {\n  border: 1px solid #fff;\n  cursor: pointer;\n  color: #fff;\n  font-size: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.restart-btn {\n  height: 50px;\n  width: 130px;\n  margin: 30px auto;\n  border: none;\n  color: #000;\n  border-radius: 5px;\n  background-color: #fff;\n  cursor: pointer;\n  transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n  background-color: #ccc;\n}", "",{"version":3,"sources":["webpack://./src/assets/css/style.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,SAAA;EACA,wBAAA;AACJ;;AAEA;EACI,sBAAA;AACJ;;AAEA;EACI,YAAA;EACA,aAAA;EACA,sBAAA;AACJ;AAEI;EACI,kCAAA;EAEA,aAAA;EACA,qCAAA;EACA,kCAAA;EAEA,aAAA;EACA,YAAA;EACA,YAAA;AAFR;AAIQ;EACI,sBAAA;EACA,eAAA;EACA,WAAA;EACA,eAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAFZ;;AAOA;EACI,YAAA;EACA,YAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,8CAAA;AAJJ;;AAOA;EACI,sBAAA;AAJJ","sourcesContent":["* {\n    box-sizing: border-box;\n    margin:  0;\n    font-family: 'Helvetica';\n}\n\nbody {\n    background-color: #444;\n}\n\n.container {\n    margin: auto;\n    display: flex;\n    flex-direction: column;\n\n\n    .box {\n        background-color: rgb(18, 89, 212);\n        \n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        grid-template-rows: repeat(3, 1fr);\n    \n        height: 500px;\n        width: 500px;\n        margin: auto;\n    \n        div {\n            border: 1px solid #fff;\n            cursor: pointer;\n            color: #fff;\n            font-size: 40px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n    }\n}\n\n.restart-btn {\n    height: 50px;\n    width: 130px;\n    margin: 30px auto;\n    border: none;\n    color: #000;\n    border-radius: 5px;\n    background-color: #fff;\n    cursor: pointer;\n    transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n    background-color: #ccc;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes blind {\n  0% {\n    background-color: rgb(18, 89, 212);\n  }\n  50% {\n    background-color: rgb(88, 141, 232);\n  }\n  100% {\n    background-color: rgb(18, 89, 212);\n  }\n}\n* {\n  box-sizing: border-box;\n  margin: 0;\n  font-family: \"Helvetica\";\n}\n\nbody {\n  background-color: #444;\n}\n\n.container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n}\n.container .left, .container .right {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  padding-top: 50px;\n  color: #fff;\n}\n.container .center {\n  margin: auto;\n  display: flex;\n  flex-direction: column;\n}\n.container .box {\n  background-color: rgb(18, 89, 212);\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  height: 500px;\n  width: 500px;\n  margin: 10px auto;\n}\n.container .box div {\n  border: 1px solid #fff;\n  cursor: pointer;\n  color: #fff;\n  font-size: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.container .box div.active {\n  animation: blind 2s infinite;\n}\n\n.restart-btn {\n  height: 50px;\n  width: 130px;\n  margin: 30px auto;\n  border: none;\n  color: #000;\n  border-radius: 5px;\n  background-color: #fff;\n  cursor: pointer;\n  transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n  background-color: #ccc;\n}", "",{"version":3,"sources":["webpack://./src/assets/css/style.scss"],"names":[],"mappings":"AAAA;EACI;IACI,kCAAA;EACN;EACE;IACI,mCAAA;EACN;EACE;IACI,kCAAA;EACN;AACF;AAEA;EACI,sBAAA;EACA,SAAA;EACA,wBAAA;AAAJ;;AAGA;EACI,sBAAA;AAAJ;;AAGA;EACI,WAAA;EACA,YAAA;EACA,aAAA;AAAJ;AAEI;EACI,WAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,SAAA;EACA,iBAAA;EACA,WAAA;AAAR;AAGI;EACI,YAAA;EACA,aAAA;EACA,sBAAA;AADR;AAII;EACI,kCAAA;EAEA,aAAA;EACA,qCAAA;EACA,kCAAA;EAEA,aAAA;EACA,YAAA;EACA,iBAAA;AAJR;AAMQ;EACI,sBAAA;EACA,eAAA;EACA,WAAA;EACA,eAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAJZ;AAOQ;EACI,4BAAA;AALZ;;AAUA;EACI,YAAA;EACA,YAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,8CAAA;AAPJ;;AAUA;EACI,sBAAA;AAPJ","sourcesContent":["@keyframes blind {\n    0% {\n        background-color: rgb(18, 89, 212) ;\n    };\n    50% {\n        background-color: rgb(88, 141, 232);\n    };\n    100% {\n        background-color: rgb(18, 89, 212);\n    }\n}\n\n* {\n    box-sizing: border-box;\n    margin:  0;\n    font-family: 'Helvetica';\n}\n\nbody {\n    background-color: #444;\n}\n\n.container {\n    width: 100%;\n    height: 100%;\n    display: flex;\n\n    .left, .right {\n        width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n        padding-top: 50px;\n        color: #fff;\n    }\n\n    .center {\n        margin: auto;\n        display: flex;\n        flex-direction: column;\n    };\n\n    .box {\n        background-color: rgb(18, 89, 212);\n        \n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        grid-template-rows: repeat(3, 1fr);\n        \n        height: 500px;\n        width: 500px;\n        margin:10px auto;\n    \n        div {\n            border: 1px solid #fff;\n            cursor: pointer;\n            color: #fff;\n            font-size: 40px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n\n        div.active {\n            animation: blind 2s infinite;\n        }\n    }\n}\n\n.restart-btn {\n    height: 50px;\n    width: 130px;\n    margin: 30px auto;\n    border: none;\n    color: #000;\n    border-radius: 5px;\n    background-color: #fff;\n    cursor: pointer;\n    transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n    background-color: #ccc;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -614,17 +614,32 @@ __webpack_require__.r(__webpack_exports__);
 
 var qs = document.querySelectorAll('.q');
 var start = 0;
+var xWinners = 0;
+var oWinners = 0;
+var wasAWinner = false;
+var names = [];
+var left = document.querySelector('.left span');
+var right = document.querySelector('.right span');
 document.addEventListener('click', function (e) {
   var el = e.target;
 
-  if (el.classList.contains('q') && el.innerText === '') {
+  if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
     el.innerText = addSymbol();
+    var status = verifyWinner();
+
+    if (status === true) {
+      alert(el.innerText + ' ganhou.');
+    } else if (status === 'Empate') {
+      alert('Empatou');
+    }
   }
 
   if (el.classList.contains('restart-btn')) {
     qs.forEach(function (q) {
       q.innerText = '';
       start = 0;
+      wasAWinner = false;
+      if (q.classList.contains('active')) q.classList.remove('active');
     });
   }
 });
@@ -645,16 +660,23 @@ function verifyWinner() {
   }
 
   checkeds = checkeds.slice(0, 9);
-  var winner = false;
+  var totalChecked = checkeds.filter(function (item) {
+    return item === '';
+  });
 
   for (var _i = 0, _winnerPositions = winnerPositions; _i < _winnerPositions.length; _i++) {
     var positions = _winnerPositions[_i];
     if (qs[positions[0]].innerText && qs[positions[1]].innerText && qs[positions[2]].innerText) if (qs[positions[0]].innerText === qs[positions[1]].innerText && qs[positions[1]].innerText === qs[positions[2]].innerText) {
-      winner = true;
+      if (qs[positions[0]].innerText === 'X') left.innerHTML = ++xWinners;else right.innerHTML = ++oWinners;
+      wasAWinner = true;
+      positions.forEach(function (p) {
+        return qs[p].classList.add('active');
+      });
     }
   }
 
-  return winner;
+  if (!wasAWinner && totalChecked.length === 0) return 'Empate';
+  return wasAWinner;
 }
 })();
 

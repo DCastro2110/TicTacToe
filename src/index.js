@@ -2,20 +2,38 @@ import './assets/css/style.scss'
 
 const qs = document.querySelectorAll('.q');
 let start = 0;
+let xWinners = 0;
+let oWinners = 0;
+let wasAWinner = false;
+let names = [];
+
+const left = document.querySelector('.left span');
+const right = document.querySelector('.right span');
+
 
 document.addEventListener('click', (e) => {
     const el = e.target;
 
-    if (el.classList.contains('q') && el.innerText === '') {
-        el.innerText = addSymbol()   
+    if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
+        el.innerText = addSymbol()  
+        const status = verifyWinner();
+        if (status === true) {
+            alert(el.innerText + ' ganhou.');
+        }
+        else if (status === 'Empate') {
+            alert('Empatou')
+        }
     }
 
     if (el.classList.contains('restart-btn')) {
         qs.forEach(q => {
             q.innerText = '';
             start = 0;
+            wasAWinner = false;
+            if (q.classList.contains('active')) q.classList.remove('active')
         })
     }
+
 })
 
 
@@ -48,14 +66,21 @@ function verifyWinner() {
         checkeds.push(qs[i].innerText);
     }
     checkeds = checkeds.slice(0, 9)
+
+    let totalChecked = checkeds.filter(item => item === '');
     
-    let winner = false
     for (let positions of winnerPositions) {
         if (qs[positions[0]].innerText && qs[positions[1]].innerText && qs[positions[2]].innerText)
             if (qs[positions[0]].innerText === qs[positions[1]].innerText && qs[positions[1]].innerText === qs[positions[2]].innerText) {
-                winner = true;
+                
+                if (qs[positions[0]].innerText === 'X') left.innerHTML = ++xWinners;
+                else right.innerHTML = ++oWinners
+                
+                wasAWinner = true;
+                positions.forEach((p) => qs[p].classList.add('active'));
             }
     }
     
-    return winner
+    if (!wasAWinner && totalChecked.length === 0) return 'Empate'
+    return wasAWinner;
 }
