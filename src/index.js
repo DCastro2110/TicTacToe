@@ -1,11 +1,11 @@
 import './assets/css/style.scss'
 
 const qs = document.querySelectorAll('.q');
+
 let start = 0;
 let xWinners = 0;
 let oWinners = 0;
 let wasAWinner = false;
-let names = [];
 
 const left = document.querySelector('.left span');
 const right = document.querySelector('.right span');
@@ -17,12 +17,8 @@ document.addEventListener('click', (e) => {
     if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
         el.innerText = addSymbol()  
         const status = verifyWinner();
-        if (status === true) {
-            alert(el.innerText + ' ganhou.');
-        }
-        else if (status === 'Empate') {
-            alert('Empatou')
-        }
+        if (status === true) alert(el.innerText + ' ganhou.');
+        else if (status === 'Empate') alert('Empatou');
     }
 
     if (el.classList.contains('restart-btn')) {
@@ -65,6 +61,7 @@ function verifyWinner() {
     for (let i in qs) {
         checkeds.push(qs[i].innerText);
     }
+    
     checkeds = checkeds.slice(0, 9)
 
     let totalChecked = checkeds.filter(item => item === '');

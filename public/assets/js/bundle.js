@@ -617,7 +617,6 @@ var start = 0;
 var xWinners = 0;
 var oWinners = 0;
 var wasAWinner = false;
-var names = [];
 var left = document.querySelector('.left span');
 var right = document.querySelector('.right span');
 document.addEventListener('click', function (e) {
@@ -626,12 +625,7 @@ document.addEventListener('click', function (e) {
   if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
     el.innerText = addSymbol();
     var status = verifyWinner();
-
-    if (status === true) {
-      alert(el.innerText + ' ganhou.');
-    } else if (status === 'Empate') {
-      alert('Empatou');
-    }
+    if (status === true) alert(el.innerText + ' ganhou.');else if (status === 'Empate') alert('Empatou');
   }
 
   if (el.classList.contains('restart-btn')) {
