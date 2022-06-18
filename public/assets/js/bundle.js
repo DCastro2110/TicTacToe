@@ -619,24 +619,42 @@ var oWinners = 0;
 var wasAWinner = false;
 var left = document.querySelector('.left span');
 var right = document.querySelector('.right span');
+var btn = document.querySelector('.restart-btn');
 document.addEventListener('click', function (e) {
   var el = e.target;
 
   if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
     el.innerText = addSymbol();
     var status = verifyWinner();
-    if (status === true) alert(el.innerText + ' ganhou.');else if (status === 'Empate') alert('Empatou');
+
+    if (status === true) {
+      alert(el.innerText + ' ganhou.');
+    } else if (status === 'Empate') {
+      alert('Empatou');
+      setTimeout(function () {
+        restart();
+      }, 2000);
+      btn.setAttribute('disabled', 'disabled');
+    }
   }
 
   if (el.classList.contains('restart-btn')) {
-    qs.forEach(function (q) {
-      q.innerText = '';
-      start = 0;
-      wasAWinner = false;
-      if (q.classList.contains('active')) q.classList.remove('active');
-    });
+    restart();
   }
 });
+
+function restart() {
+  qs.forEach(function (q) {
+    q.innerText = '';
+    start = 0;
+    wasAWinner = false;
+    if (q.classList.contains('active')) q.classList.remove('active');
+  });
+
+  if (btn.disabled === true) {
+    btn.removeAttribute('disabled');
+  }
+}
 
 function addSymbol() {
   var symbols = ['X', 'O'];

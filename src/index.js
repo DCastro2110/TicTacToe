@@ -9,6 +9,7 @@ let wasAWinner = false;
 
 const left = document.querySelector('.left span');
 const right = document.querySelector('.right span');
+const btn = document.querySelector('.restart-btn');
 
 
 document.addEventListener('click', (e) => {
@@ -17,21 +18,37 @@ document.addEventListener('click', (e) => {
     if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
         el.innerText = addSymbol()  
         const status = verifyWinner();
-        if (status === true) alert(el.innerText + ' ganhou.');
-        else if (status === 'Empate') alert('Empatou');
+        if (status === true) {
+            alert(el.innerText + ' ganhou.');
+        }
+        else if (status === 'Empate') {
+            alert('Empatou');
+            setTimeout(() => {
+                restart();
+            }, 2000);
+            btn.setAttribute('disabled', 'disabled');
+        }
     }
 
     if (el.classList.contains('restart-btn')) {
-        qs.forEach(q => {
-            q.innerText = '';
-            start = 0;
-            wasAWinner = false;
-            if (q.classList.contains('active')) q.classList.remove('active')
-        })
+        restart()
     }
 
 })
 
+
+function restart() {
+    qs.forEach(q => {
+        q.innerText = '';
+        start = 0;
+        wasAWinner = false;
+        if (q.classList.contains('active')) q.classList.remove('active')
+    })
+
+    if (btn.disabled === true) {
+        btn.removeAttribute('disabled');
+    }
+}
 
 function addSymbol() {
     const symbols = ['X', 'O'];
