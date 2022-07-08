@@ -2,6 +2,58 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/playerName.js":
+/*!***********************************!*\
+  !*** ./src/modules/playerName.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "playerXName": () => (/* binding */ playerXName),
+/* harmony export */   "playerYName": () => (/* binding */ playerYName)
+/* harmony export */ });
+var time = 0;
+var playerXName;
+var playerYName;
+var playerSelectBox = document.querySelector(".select-player");
+var playerTitle = document.querySelector(".player-title");
+var selectPlayerBtn = document.querySelector(".select-player-btn");
+var playerInput = document.querySelector("#player-name");
+var playerX = document.querySelector(".playerX");
+var playerY = document.querySelector(".playerY");
+selectPlayerBtn.addEventListener("click", function () {
+  addName();
+});
+playerInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    addName();
+  }
+});
+
+function addName() {
+  if (!playerInput.value) {
+    alert("O campo está vazio. Digite alguma coisa.");
+    return;
+  }
+
+  if (time === 0) {
+    playerXName = playerInput.value;
+    playerInput.value = "";
+    playerTitle.innerHTML = "Player Y";
+    time++;
+    return;
+  } else {
+    playerYName = playerInput.value;
+    playerSelectBox.style.display = "none";
+  }
+
+  playerX.innerText = playerXName;
+  playerY.innerText = playerYName;
+}
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/css/style.scss":
 /*!****************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/css/style.scss ***!
@@ -21,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@keyframes blind {\n  0% {\n    background-color: rgb(18, 89, 212);\n  }\n  50% {\n    background-color: rgb(88, 141, 232);\n  }\n  100% {\n    background-color: rgb(18, 89, 212);\n  }\n}\n* {\n  box-sizing: border-box;\n  margin: 0;\n  font-family: \"Helvetica\";\n}\n\nbody {\n  background-color: #444;\n}\n\n.container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n}\n.container .left, .container .right {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  padding-top: 50px;\n  color: #fff;\n}\n.container .center {\n  margin: auto;\n  display: flex;\n  flex-direction: column;\n}\n.container .box {\n  background-color: rgb(18, 89, 212);\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  height: 500px;\n  width: 500px;\n  margin: 10px auto;\n}\n.container .box div {\n  border: 1px solid #fff;\n  cursor: pointer;\n  color: #fff;\n  font-size: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.container .box div.active {\n  animation: blind 2s infinite;\n}\n\n.restart-btn {\n  height: 50px;\n  width: 130px;\n  margin: 30px auto;\n  border: none;\n  color: #000;\n  border-radius: 5px;\n  background-color: #fff;\n  cursor: pointer;\n  transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n  background-color: #ccc;\n}", "",{"version":3,"sources":["webpack://./src/assets/css/style.scss"],"names":[],"mappings":"AAAA;EACI;IACI,kCAAA;EACN;EACE;IACI,mCAAA;EACN;EACE;IACI,kCAAA;EACN;AACF;AAEA;EACI,sBAAA;EACA,SAAA;EACA,wBAAA;AAAJ;;AAGA;EACI,sBAAA;AAAJ;;AAGA;EACI,WAAA;EACA,YAAA;EACA,aAAA;AAAJ;AAEI;EACI,WAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,SAAA;EACA,iBAAA;EACA,WAAA;AAAR;AAGI;EACI,YAAA;EACA,aAAA;EACA,sBAAA;AADR;AAII;EACI,kCAAA;EAEA,aAAA;EACA,qCAAA;EACA,kCAAA;EAEA,aAAA;EACA,YAAA;EACA,iBAAA;AAJR;AAMQ;EACI,sBAAA;EACA,eAAA;EACA,WAAA;EACA,eAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAJZ;AAOQ;EACI,4BAAA;AALZ;;AAUA;EACI,YAAA;EACA,YAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,8CAAA;AAPJ;;AAUA;EACI,sBAAA;AAPJ","sourcesContent":["@keyframes blind {\n    0% {\n        background-color: rgb(18, 89, 212) ;\n    };\n    50% {\n        background-color: rgb(88, 141, 232);\n    };\n    100% {\n        background-color: rgb(18, 89, 212);\n    }\n}\n\n* {\n    box-sizing: border-box;\n    margin:  0;\n    font-family: 'Helvetica';\n}\n\nbody {\n    background-color: #444;\n}\n\n.container {\n    width: 100%;\n    height: 100%;\n    display: flex;\n\n    .left, .right {\n        width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n        padding-top: 50px;\n        color: #fff;\n    }\n\n    .center {\n        margin: auto;\n        display: flex;\n        flex-direction: column;\n    };\n\n    .box {\n        background-color: rgb(18, 89, 212);\n        \n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        grid-template-rows: repeat(3, 1fr);\n        \n        height: 500px;\n        width: 500px;\n        margin:10px auto;\n    \n        div {\n            border: 1px solid #fff;\n            cursor: pointer;\n            color: #fff;\n            font-size: 40px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n\n        div.active {\n            animation: blind 2s infinite;\n        }\n    }\n}\n\n.restart-btn {\n    height: 50px;\n    width: 130px;\n    margin: 30px auto;\n    border: none;\n    color: #000;\n    border-radius: 5px;\n    background-color: #fff;\n    cursor: pointer;\n    transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n    background-color: #ccc;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@keyframes blind {\n  0% {\n    background-color: rgb(18, 89, 212);\n  }\n  50% {\n    background-color: rgb(88, 141, 232);\n  }\n  100% {\n    background-color: rgb(18, 89, 212);\n  }\n}\n* {\n  box-sizing: border-box;\n  margin: 0;\n  font-family: \"Helvetica\";\n}\n\nbody {\n  background-color: #444;\n}\n\n.container {\n  width: 100%;\n  height: 100%;\n  display: flex;\n}\n.container .left, .container .right {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  padding-top: 50px;\n  color: #fff;\n}\n.container .center {\n  margin: auto;\n  display: flex;\n  flex-direction: column;\n}\n.container .box {\n  background-color: rgb(18, 89, 212);\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  height: 500px;\n  width: 500px;\n  margin: 10px auto;\n}\n.container .box div {\n  border: 1px solid #fff;\n  cursor: pointer;\n  color: #fff;\n  font-size: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.container .box div.active {\n  animation: blind 2s infinite;\n}\n\n.restart-btn {\n  height: 50px;\n  width: 130px;\n  margin: 30px auto;\n  border: none;\n  color: #000;\n  border-radius: 5px;\n  background-color: #fff;\n  cursor: pointer;\n  transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n  background-color: #ccc;\n}\n\n.select-player {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(0, 0, 0, 0.6);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.select-player div {\n  background-color: #fff;\n  width: 50%;\n  max-width: 300px;\n  min-height: 100px;\n  border-radius: 10px;\n  padding: 10px;\n  display: flex;\n  flex-direction: column;\n}\n.select-player div span {\n  font-weight: bold;\n  font-size: 20px;\n  color: rgb(18, 89, 212);\n}\n.select-player div #player-name {\n  outline: none;\n  padding: 10px;\n  border: 1px solid rgb(18, 89, 212);\n  border-radius: 5px;\n  margin-top: 10px;\n}\n.select-player div button {\n  border-radius: 5px;\n  padding: 5px;\n  margin-top: 10px;\n  align-self: flex-end;\n  border: none;\n  color: #fff;\n  background-color: rgb(18, 89, 212);\n  cursor: pointer;\n  transition: transform 150ms linear;\n}\n.select-player div button:hover {\n  transform: scale(1.1);\n}", "",{"version":3,"sources":["webpack://./src/assets/css/style.scss"],"names":[],"mappings":"AAAA;EACI;IACI,kCAAA;EACN;EACE;IACI,mCAAA;EACN;EACE;IACI,kCAAA;EACN;AACF;AAEA;EACI,sBAAA;EACA,SAAA;EACA,wBAAA;AAAJ;;AAGA;EACI,sBAAA;AAAJ;;AAGA;EACI,WAAA;EACA,YAAA;EACA,aAAA;AAAJ;AAEI;EACI,WAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,SAAA;EACA,iBAAA;EACA,WAAA;AAAR;AAGI;EACI,YAAA;EACA,aAAA;EACA,sBAAA;AADR;AAII;EACI,kCAAA;EAEA,aAAA;EACA,qCAAA;EACA,kCAAA;EAEA,aAAA;EACA,YAAA;EACA,iBAAA;AAJR;AAMQ;EACI,sBAAA;EACA,eAAA;EACA,WAAA;EACA,eAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAJZ;AAOQ;EACI,4BAAA;AALZ;;AAUA;EACI,YAAA;EACA,YAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACA,eAAA;EACA,8CAAA;AAPJ;;AAUA;EACI,sBAAA;AAPJ;;AASA;EACI,kBAAA;EACA,MAAA;EACA,SAAA;EACA,OAAA;EACA,QAAA;EACA,oCAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AANJ;AAQI;EACI,sBAAA;EACA,UAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;AANR;AAQQ;EACI,iBAAA;EACA,eAAA;EACA,uBAAA;AANZ;AASQ;EACI,aAAA;EACA,aAAA;EACA,kCAAA;EACA,kBAAA;EACA,gBAAA;AAPZ;AAUQ;EACI,kBAAA;EACA,YAAA;EACA,gBAAA;EACA,oBAAA;EACA,YAAA;EACA,WAAA;EACA,kCAAA;EACA,eAAA;EACA,kCAAA;AARZ;AAWQ;EACI,qBAAA;AATZ","sourcesContent":["@keyframes blind {\n    0% {\n        background-color: rgb(18, 89, 212) ;\n    };\n    50% {\n        background-color: rgb(88, 141, 232);\n    };\n    100% {\n        background-color: rgb(18, 89, 212);\n    }\n}\n\n* {\n    box-sizing: border-box;\n    margin:  0;\n    font-family: 'Helvetica';\n}\n\nbody {\n    background-color: #444;\n}\n\n.container {\n    width: 100%;\n    height: 100%;\n    display: flex;\n\n    .left, .right {\n        width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        gap: 10px;\n        padding-top: 50px;\n        color: #fff;\n    }\n\n    .center {\n        margin: auto;\n        display: flex;\n        flex-direction: column;\n    };\n\n    .box {\n        background-color: rgb(18, 89, 212);\n        \n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        grid-template-rows: repeat(3, 1fr);\n        \n        height: 500px;\n        width: 500px;\n        margin:10px auto;\n    \n        div {\n            border: 1px solid #fff;\n            cursor: pointer;\n            color: #fff;\n            font-size: 40px;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n        }\n\n        div.active {\n            animation: blind 2s infinite;\n        }\n    }\n}\n\n.restart-btn {\n    height: 50px;\n    width: 130px;\n    margin: 30px auto;\n    border: none;\n    color: #000;\n    border-radius: 5px;\n    background-color: #fff;\n    cursor: pointer;\n    transition: background-color 300ms ease-in-out;\n}\n\n.restart-btn:hover {\n    background-color: #ccc;\n}\n.select-player {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    background-color: rgba(0, 0, 0, 0.6);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    div {\n        background-color: #fff;\n        width: 50%;\n        max-width: 300px;\n        min-height: 100px;\n        border-radius: 10px;\n        padding: 10px;\n        display: flex;\n        flex-direction: column;\n\n        span {\n            font-weight: bold;\n            font-size: 20px;\n            color: rgb(18, 89, 212);;\n        }\n\n        #player-name {\n            outline: none;\n            padding: 10px;\n            border: 1px solid rgb(18, 89, 212);;\n            border-radius: 5px;\n            margin-top: 10px ;\n        }\n\n        button {\n            border-radius: 5px;\n            padding: 5px;\n            margin-top: 10px;\n            align-self: flex-end;\n            border: none;\n            color: #fff;\n            background-color: rgb(18, 89, 212);\n            cursor: pointer;\n            transition: transform 150ms linear;\n        }\n\n        button:hover {\n            transform: scale(1.1);\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -610,54 +662,56 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _assets_css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/css/style.scss */ "./src/assets/css/style.scss");
+/* harmony import */ var _modules_playerName__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/playerName */ "./src/modules/playerName.js");
+/* harmony import */ var _assets_css_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/css/style.scss */ "./src/assets/css/style.scss");
 
-var qs = document.querySelectorAll('.q');
+
+var qs = document.querySelectorAll(".q");
 var start = 0;
 var xWinners = 0;
 var oWinners = 0;
 var wasAWinner = false;
-var left = document.querySelector('.left span');
-var right = document.querySelector('.right span');
-var btn = document.querySelector('.restart-btn');
-document.addEventListener('click', function (e) {
+var left = document.querySelector(".left span");
+var right = document.querySelector(".right span");
+var btn = document.querySelector(".restart-btn");
+document.addEventListener("click", function (e) {
   var el = e.target;
 
-  if (el.classList.contains('q') && el.innerText === '' && !wasAWinner) {
+  if (el.classList.contains("q") && el.innerText === "" && !wasAWinner) {
     el.innerText = addSymbol();
     var status = verifyWinner();
 
     if (status === true) {
-      alert(el.innerText + ' ganhou.');
-    } else if (status === 'Empate') {
-      alert('Empatou');
+      alert(el.innerText + " ganhou.");
+    } else if (status === "Empate") {
+      alert("Empatou");
       setTimeout(function () {
         restart();
       }, 2000);
-      btn.setAttribute('disabled', 'disabled');
+      btn.setAttribute("disabled", "disabled");
     }
   }
 
-  if (el.classList.contains('restart-btn')) {
+  if (el.classList.contains("restart-btn")) {
     restart();
   }
 });
 
 function restart() {
   qs.forEach(function (q) {
-    q.innerText = '';
+    q.innerText = "";
     start = 0;
     wasAWinner = false;
-    if (q.classList.contains('active')) q.classList.remove('active');
+    if (q.classList.contains("active")) q.classList.remove("active");
   });
 
   if (btn.disabled === true) {
-    btn.removeAttribute('disabled');
+    btn.removeAttribute("disabled");
   }
 }
 
 function addSymbol() {
-  var symbols = ['X', 'O'];
+  var symbols = ["X", "O"];
   var symbolOfTime = symbols[start];
   if (start === 0) start = 1;else start = 0;
   return symbolOfTime;
@@ -673,21 +727,21 @@ function verifyWinner() {
 
   checkeds = checkeds.slice(0, 9);
   var totalChecked = checkeds.filter(function (item) {
-    return item === '';
+    return item === "";
   });
 
   for (var _i = 0, _winnerPositions = winnerPositions; _i < _winnerPositions.length; _i++) {
     var positions = _winnerPositions[_i];
     if (qs[positions[0]].innerText && qs[positions[1]].innerText && qs[positions[2]].innerText) if (qs[positions[0]].innerText === qs[positions[1]].innerText && qs[positions[1]].innerText === qs[positions[2]].innerText) {
-      if (qs[positions[0]].innerText === 'X') left.innerHTML = ++xWinners;else right.innerHTML = ++oWinners;
+      if (qs[positions[0]].innerText === "X") left.innerHTML = ++xWinners;else right.innerHTML = ++oWinners;
       wasAWinner = true;
       positions.forEach(function (p) {
-        return qs[p].classList.add('active');
+        return qs[p].classList.add("active");
       });
     }
   }
 
-  if (!wasAWinner && totalChecked.length === 0) return 'Empate';
+  if (!wasAWinner && totalChecked.length === 0) return "Empate";
   return wasAWinner;
 }
 })();
