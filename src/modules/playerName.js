@@ -20,12 +20,8 @@ playerInput.addEventListener("keypress", (e) => {
 });
 
 function addName() {
-  if (!playerInput.value) {
-    alert("O campo está vazio. Digite alguma coisa.");
-    return;
-  }
   if (time === 0) {
-    playerXName = playerInput.value;
+    playerXName = playerInput.value || playerX.innerText;
 
     playerInput.value = "";
     playerTitle.innerHTML = "Player Y";
@@ -33,7 +29,7 @@ function addName() {
     time++;
     return;
   } else {
-    playerYName = playerInput.value;
+    playerYName = playerInput.value || playerY.innerText;
     playerSelectBox.style.display = "none";
   }
 
