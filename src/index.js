@@ -19,7 +19,9 @@ document.addEventListener("click", (e) => {
     el.innerText = addSymbol();
     const status = verifyWinner();
     if (status === true) {
-      alert(el.innerText + " ganhou.");
+      setTimeout(() => {
+        alert(el.innerText + " ganhou.");
+      });
     } else if (status === "Empate") {
       alert("Empatou");
       setTimeout(() => {

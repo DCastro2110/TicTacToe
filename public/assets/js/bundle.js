@@ -682,7 +682,9 @@ document.addEventListener("click", function (e) {
     var status = verifyWinner();
 
     if (status === true) {
-      alert(el.innerText + " ganhou.");
+      setTimeout(function () {
+        alert(el.innerText + " ganhou.");
+      });
     } else if (status === "Empate") {
       alert("Empatou");
       setTimeout(function () {
